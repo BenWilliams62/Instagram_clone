@@ -17,4 +17,5 @@ This project is being actively developed
 - uploading
 - commenting
 - updating number of likes when liked
+- make responsive
 
