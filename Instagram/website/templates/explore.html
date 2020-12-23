@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <body>
+
+        <div class="mobile mobile-header-pad"></div>
+
+        <!--
+            search div
+        -->
+        <div class="mobile">
+            <div class="explore">
+                <input class="explore-search" type="search" placeholder="Search for a user">
+            </div>
+            
+            
+            <div class="profile-images">
+                <!--
+                    add logic for repeated images
+                -->
+                <div class="profile-image">
+                    <a href="single-image">
+                        <img src="{% static 'img/icon.jpg' %}">
+                    </a>
+                </div>
+                <div class="profile-image">
+                    <a href="single-image">
+                        <img src="{% static 'img/icon.jpg' %}">
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        <div class="mobile mobile-footer-pad"></div>
+
+        
+
+    </body> 
+{% endblock %}

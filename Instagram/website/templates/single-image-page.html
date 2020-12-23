@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <body>
+
+        <div class="mobile mobile-header-pad"></div>
+
+        <!-- 
+            for images in feed
+        -->
+        <div class="mobile">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-header-pp">
+                        <!--add logic for profile picture-->
+                        <img src="{% static 'img/icon.jpg' %}">
+                    </div>
+
+                    <div class="card-header-user">
+                        <!--add logic for picture username-->
+                        <h4>Username</h4>
+                    </div>
+                </div>
+
+                <div class="card-img">
+                    <!--add logic for images-->
+                    <img src="{% static 'img/icon.jpg' %}" card="card-img-actual">
+                </div>
+
+                <div class="card-interactions">
+                    <div class="card-like card-button">
+                        <!--like button img-->
+                        <!--add logic to add or remove like-->
+                        <img src="{% static 'img/icon.jpg' %}">
+                    </div>
+
+                    <div class="card-comment card-button">
+                        <!--comment button img-->
+                        <a href="comments">
+                            <img src="{% static 'img/icon.jpg' %}">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card-likes">
+                    <strong><a href="lists">12 likes</a></strong>
+                    <!--add logic for picture like number-->
+                </div>
+
+                <div class="card-caption">
+                    <strong>Username</strong>
+                    Captions
+                    <br>
+                    <small>hh:mm</small>
+                    <!--add logic for picture caption and first two comments-->
+                </div>
+            </div>
+        </div>
+
+
+        <!-- desktop -->
+
+        <div class="desktop">
+
+            <div class="desktop desktop-pad"></div>
+            <div class="desktop desktop-pad"></div>
+
+            <div class="desktop-single-card">
+                <div class="desktop-single-card-img">
+                    <img src="{{ object.image.url }}">
+                </div>
+                <div class="desktop-single-card-interactions">
+                    <div class="desktop-single-card-header">
+                        <div class="desktop-single-card-header-img">
+                            <img src="{{ object.userPosted.profile.pic.url }}">
+                        </div>
+                        <div class="desktop-single-card-header-user">
+                            <a href="{{ object.userPosted.profile.get_absolute_url }}">
+                                {{ object.userPosted.username }}
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="desktop-single-card-comments">
+                        {% for comment in object.get_comments %}
+                        <div class="desktop-single-card-comment-card">
+                            <div class="desktop-single-card-comment-card-img">
+                                <img src="{{ comment.commentBy.profile.pic.url }}">
+                            </div>
+
+                            <div class="desktop-single-card-comment-card-comment">
+                                <a href="{{ comment.commentBy.profile.get_absolute_url }}"><strong>{{ comment.commentBy.username }}</strong>
+                                    {{ comment.comment }}
+                                </a>
+                                
+                            </div>
+
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="desktop-single-card-likes">
+                        <div class="desktop-single-card-likes-img" onclick="addLike({{ object.postID }})">
+                            <img src="{% static 'img/like_icon.png' %}">
+                        </div>
+
+                        <div class="desktop-single-card-likes-stat">
+                            {{ object.get_likes|length }} likes <!--logic-->
+                        </div>
+                    </div>
+
+                    <form method="POST" class="desktop-single-card-new-comment">
+                        <!-- input -->
+                        {% csrf_token %}
+                        {{ form.message }}
+                        <input type='text' style="display: none;" name='postID'  id='postID' value='{{ object }}'></input>
+                        
+                        <!--submit-->
+                        <button type="submit" class="desktop-single-card-new-comment-button">
+                            Post
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        
+
+        <div class="mobile mobile-footer-pad"></div>
+
+        
+
+    </body> 
+{% endblock %}

@@ -1,0 +1,1231 @@
+html {
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #000000;
+    position: relative;
+    background-color: #ffffff;
+}
+
+.desktop {
+    /*display: none;*/
+}
+
+.mobile {
+    display: none;
+}
+
+
+/* **********************************
+            mobile
+********************************** */
+
+/* **********
+*************
+*************
+    header
+    footer 
+*************
+*************
+********** */
+
+.mobile-header {
+    width: 100vw;
+    height: 5vh;
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    border-bottom: 1px solid #000000;
+    z-index: 999;
+    background-color: #ffffff;
+}
+
+.mobile-header-page-title {
+    text-align: center;
+    font-size: 3vh;
+    margin: 1vh auto;
+}
+
+.mobile-footer {
+    width: 100vw;
+    height: 5vh;
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(5, 1fr);
+    background-color: #fff;
+}
+
+.nav-icon {
+    height: 80%;
+    padding: 5%;
+    width: 80%;
+    padding: auto;
+    overflow: hidden;
+
+}
+
+.mobile-icon {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.nav-icon-1 {
+    grid-column: 1 / 1;
+}
+
+.nav-icon-2 {
+    grid-column: 2 / 2;
+}
+
+.nav-icon-3 {
+    grid-column: 3 / 3;
+}
+
+.nav-icon-4 {
+    grid-column: 4 / 4;
+}
+
+.nav-icon-5 {
+    grid-column: 5 / 5;
+}
+
+.mobile-header-pad {
+    height: 5vh;
+}
+
+.mobile-footer-pad {
+    height: 5vh;
+}
+
+
+/* **********
+*************
+*************
+    card
+*************
+*************
+********** */
+
+.card {
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.card-header {
+    margin-top: 1vw;
+    height: 10vw;
+    width: 100vw;
+    position: relative;
+    /*overflow: hidden;*/
+}
+
+.card-header-pp {
+    width: 9vw;
+    height: 9vw;
+    margin: .5vw;
+    float: left;
+    z-index: 5;
+    border: 1px solid .5px;
+}
+
+.card-header-pp img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.card-header-user {
+    width: 90vw;
+    height: 10vw;
+    float: left;
+    z-index: 5;
+}
+
+.card-header-user h4 {
+    padding-left: 2vw;
+}
+
+.card-img {
+    width: 100vw;
+    min-height: 10vh;
+    max-height: 80vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-img img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.card-interactions {
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    background-color: #ffffff;
+}
+
+.card-likes {
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    background-color: #ffffff;
+    padding: 1vw 2vw; 
+    font-size: 2vw;
+}
+
+.card-caption {
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    background-color: #ffffff;
+    padding: 1vw 2vw; 
+    font-size: 2vw;
+}
+
+.card-button {
+    height: 5vw;
+    width: 5vw;
+    float: left;
+    padding: 1vw 2vw;
+}
+
+.card-button img {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+}
+
+
+/* **********
+*************
+*************
+    profile
+*************
+*************
+********** */
+
+.profile-top-card {
+    width: 96vw;
+    background-color: #ffffff;
+    border-bottom: 1px solid #000000;
+    padding: 0vw 2vw 2vw 2vw;
+}
+
+.profile-stats {
+    height: 20vw;
+    display: grid;
+    grid-template-columns: 20vw 1fr 1fr 1fr;
+}
+
+.profile-pp {
+    grid-column: 1;
+    height: 20vw;
+    width: 20vw;
+    float: left;
+    z-index: 5;
+}
+
+.profile-pp img {
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #000000;
+    height: 18vw;
+    width: 18vw;
+    margin: 1vw;
+    overflow: hidden;
+}
+
+.profile-post-number {
+    grid-column: 2;
+    text-align: center;
+    margin: auto;
+}
+
+.profile-followers-number {
+    grid-column: 3;
+    text-align: center;
+    margin: auto;
+}
+
+.profile-following-number {
+    grid-column: 4;
+    text-align: center;
+    margin: auto;
+}
+
+.profile-bio {
+    padding-top: 1vw;
+}
+
+.profile-button button {
+    width: 96vw;
+    height: 5vh;
+    text-align: center;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 1vw;
+    font-size: 3vw;
+    font-family: 'Roboto', sans-serif;
+}
+
+.profile-images {
+    width: 99vw;
+    padding: .5vw;
+}
+
+.profile-image {
+    height: 33vw;
+    width: 33vw;
+    overflow: hidden;
+    float: left;
+}
+
+.profile-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    margin: .15vw;
+}
+
+/* **********
+*************
+*************
+    explore
+*************
+*************
+********** */
+
+.explore {
+    position: relative;
+    height: 10vw;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.explore-search {
+    margin: 2.5vw 5vw;
+    height: 5vw;
+    width: 90vw;
+    border: 2px solid #000000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5vw;
+    border-radius: 2vw;
+}
+
+/* **********
+*************
+*************
+    activity
+*************
+*************
+********** */
+
+.info-card {
+    position: relative;
+    height: 10vw;
+    border: 1px solid #000000;
+    width: 100vw;
+    float: left;
+    display: grid;
+    grid-template-columns: 10vw 1fr 10vw;
+}
+
+.info-card-header-pp {
+    grid-column: 1;
+    width: 9vw;
+    height: 9vw;
+    margin: .5vw;
+    float: left;
+    z-index: 5;
+    border: 1px solid .5px;
+}
+
+.info-card-header-pp img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.info-card-text {
+    grid-column: 2;
+    padding: 1vw 1vw;
+    text-align: left !important;
+    width: 78vw;
+}
+
+.info-card-image {
+    grid-column: 3;
+    width: 9vw;
+    height: 9vw;
+    margin: .5vw;
+    float: left;
+    z-index: 5;
+    border: 1px solid .5px;
+}
+
+.info-card-image img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+
+/* **********
+*************
+*************
+    comments
+*************
+*************
+********** */
+
+.comments-card {
+    height: 85vh;
+    width: 100vw;
+    border: 1px solid #000000;
+    z-index: 3;
+    overflow: scroll;
+}
+
+.info-card-comments {
+    grid-column: 2 / 3 !important;
+    width: 88vw !important;
+    text-align: left !important;
+}
+
+.new-comment {
+    min-height: 3vh;
+    max-height: 40vh;
+    width: 100vw;
+    position: fixed;
+    bottom: 5vh;
+    background-color: #ffffff;
+    z-index: 300;
+}
+
+
+.comment-input {
+    width: 86vw;
+    margin: 1vw 5vw;
+    min-height: 3vw;
+    background-color: #ffffff;
+    border-radius: 2vw;
+    border: 1px solid #000000;
+    white-space: pre-wrap;
+    text-overflow: ellipsis;
+    padding: .5vw 2vw;
+    resize: none;
+    font-size: 2.5vw;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+/* **********************************
+            desktop
+********************************** */
+
+/* **********
+*************
+*************
+    header
+     &
+    footer
+*************
+*************
+********** */
+
+.desktop-header {
+    height: 5vh;
+    width: 100vw;
+    background-color: #ffffff;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 24vw 1fr 24vw;
+    border-bottom: 1px solid #000000;
+}
+
+.desktop-header-name {
+    grid-column: 2;
+    font-size: 3vh;
+    text-align: center;
+    margin: 1vh auto;
+    color: #000000;
+}
+
+
+.desktop-header-links {
+    grid-column: 3;
+    background-color: #ffffff;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.desktop-header-link-icon {
+    height: 3vh;
+    margin: 1vh 1vw;
+    overflow: hidden;
+    float: left;
+    position: relative;
+}
+
+.desktop-header-link-icon img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.desktop-header-profile {
+    grid-column: 1;
+}
+
+.desktop-header-settings {
+    grid-column: 2;
+}
+
+.desktop-header-login-signup {
+    grid-column: 3;
+    font-size: 2vh;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    margin: 1.5vh auto;
+}
+
+
+
+.desktop-pad {
+    width: 100vw;
+    height: 5vh;
+    position: relative;
+}
+
+/* **********
+*************
+*************
+    home
+*************
+*************
+********** */
+
+
+.index {
+    position: relative;
+    display: grid;
+    grid-template-columns: 24vw 1fr 24vw;
+    width: 100vw;
+    height: 95vh;
+    overflow: hidden;
+}
+.desktop-explore-search {
+    background-color: #ffffff;
+}
+
+.desktop-explore-search input {
+    height: 3vh;
+    width: 18vw;
+    border: 1px solid #000000;
+    border-radius: 2vw;
+    margin: 1vh 1vw 1vh 1vw;
+    padding: 0 2vw;
+    position: relative;
+}
+
+.desktop-explore {
+    grid-column: 1;
+    background-color: #ffffff;
+    overflow: scroll;
+}
+
+.desktop-explore-head {
+    position: relative;
+    font-size: 2vh;
+    text-align: center;
+    padding: 1vh 0;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.desktop-feed {
+    grid-column: 2;
+    background-color: #ffffff;
+    overflow: scroll;
+}
+
+.desktop-activity {
+    grid-column: 3;
+    background-color: #ffffff;
+    overflow: scroll;
+}
+
+.desktop-explore-posts {
+    height: 7.5vw;
+    width: 7.5vw;
+    margin: .25vw;
+    overflow: hidden;
+    float: left;
+    position: relative;
+}
+
+.desktop-explore-posts img {
+    object-fit: cover;
+    width: 7.5vw;
+    height: 7.5vw;
+}
+
+
+
+
+.card-desktop {
+    width: 52vw;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.card-header-desktop {
+    /*margin-top: 1vw;*/
+    height: 5vw;
+    width: 52vw;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-header-pp-desktop {
+    width: 4vw;
+    height: 4vw;
+    margin: .5vw;
+    float: left;
+    z-index: 5;
+    border: 1px solid .5px;
+}
+
+.card-header-pp-desktop img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.card-header-user-desktop {
+    width: 47vw;
+    height: 10vw;
+    float: left;
+    z-index: 5;
+}
+
+.card-header-user-desktop h4 {
+    padding-left: 2vw;
+}
+
+.card-img-desktop {
+    width: 52vw;
+    min-height: 10vh;
+    max-height: 80vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-img-desktop img {
+    object-fit: cover;
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
+.card-interactions-desktop {
+    width: 52vw;
+    overflow: hidden;
+    position: relative;
+    background-color: #ffffff;
+}
+
+.card-likes-desktop {
+    width: 52vw;
+    overflow: hidden;
+    position: relative;
+    background-color: #ffffff;
+    padding: 1vh 1vh; 
+    font-size: 2vh;
+}
+
+.card-likes-desktop button {
+    border: none;
+    background-color: #ffffff;
+    height: 100%;
+    width: 5vw;
+    font-size: 1vw;
+    text-align: left;
+}
+
+.card-caption-desktop {
+    width: 52vw;
+    overflow: hidden;
+    position: relative;
+    background-color: #ffffff;
+    padding: 1vh 1vh; 
+    font-size: 2vh;
+}
+
+.card-button-desktop {
+    height: 6vh;
+    width: 6vh;
+    float: left;
+    padding: .5vh 1vh;
+}
+
+.card-button-desktop img {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+}
+
+.desktop-notification-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    height: 4.8vw;
+    width: 24vw;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.desktop-notification-pp {
+    grid-column: 1;
+    background-color: #ffffff;
+    height: 100%;
+    width: 100%;
+}
+
+.desktop-notification-pp img {
+    height: 4vw;
+    width: 4vw;
+    margin: .4vw;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.desktop-notification-text {
+    grid-column: 2;
+    height: 100%;
+    width: 100%;
+    text-align: left;
+    margin: .4vw 1vw;
+    font-size: 1vw;
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
+}
+
+.desktop-notification-text a {
+    color: #000000;
+}
+
+.desktop-notification-icon {
+    grid-column: 3;
+    background-color: #ffffff;
+    height: 100%;
+    width: 100%;
+}
+
+.desktop-notification-icon img {
+    height: 4vw;
+    width: 4vw;
+    margin: .4vw;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+
+
+.likes-modal {
+    display: none;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: #00000080;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+}
+
+.follower-modal {
+    display: none;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: #00000080;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+}
+.following-modal {
+    display: none;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: #00000080;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 20vh auto;
+    border: 1px solid #888;
+    width: 30vw;
+    height: 30vh;
+    display: none;
+    grid-template-rows: 5vh 1fr;
+    border-radius: 1vw;
+    padding: 2vh;
+}
+.modal-header {
+    grid-row: 1;
+    text-align: center;
+    font-size: 3vh;
+    margin: 1vh auto;
+}
+.modal-likes {
+    height: 100%;
+    width: 30vw;
+    overflow: scroll;
+}
+.modal-like {
+    display: grid;
+    height: 5vh;
+    width: 30vw;
+    grid-template-columns: 5vh 1fr 5vh;
+}
+.modal-like-img {
+    height: 5vh;
+    width: 5vh;
+}
+.modal-like-img img {
+    width: 5vh;
+    height: 5vh;
+    z-index: 5;
+    border-radius: 50%;
+}
+.modal-like-pp {
+    grid-column: 1;
+}
+.modal-like-follow {
+    grid-column: 3;
+}
+.modal-like-user {
+    grid-column: 2;
+    text-align: left;
+    font-size: 1.5vh;
+    margin: auto 3vh;
+    min-width: 80%;
+    height: 100%;
+}
+
+.card-header-pp-desktop img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+/* **********
+*************
+*************
+    profile
+*************
+*************
+********** */
+
+.ta-center {
+    text-align: center;
+}
+
+.ta-left {
+    text-align: left;
+}
+
+.desktop-profile-top-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 52vw;
+    height: 20vw;
+    margin: 0 24vw;
+    overflow: hidden;
+}
+
+.desktop-profile-pp {
+    grid-area: 1 / 1 / 4 / 1;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.desktop-profile-pp img {
+    object-fit: cover;
+    object-position: center;
+    height: 90%;
+    width: 90%;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    margin: 5%;
+}
+
+.desktop-profile-post-number {
+    grid-area: 2 / 2 / 2 / 2;
+    margin: auto 0;
+    text-align: center;
+}
+
+.desktop-profile-followers-number {
+    grid-area: 2 / 3 / 2 / 3;
+    margin: auto 0;
+    text-align: center;
+}
+
+.desktop-profile-following-number {
+    grid-area: 2 / 4 / 2 / 4;
+    margin: auto 0;
+    text-align: center;
+}
+
+
+.desktop-profile-username {
+    grid-area: 1 / 2 / 1 / 3;
+    font-size: 2vw;
+    margin: auto 0;
+}
+
+.desktop-profile-button {
+    grid-area: 1 / 4 / 1 / 4;
+    text-align: center;
+}
+
+.desktop-profile-button button {
+    height: 3vw;
+    width: 6vw;
+    background-color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2vw;
+    border-radius: 2vw;
+    border: 1px solid #000000;
+    text-align: center;
+    margin: 1.6vw auto;
+}
+
+
+.desktop-profile-bio {
+    grid-area: 3 / 2 / 3 / 4;
+    margin: auto 0;
+}
+
+.desktop-profile-images {
+    width: 75vw;
+    margin: 0 12.5vw;
+}
+
+.desktop-profile-image {
+    height: 21vw;
+    width: 21vw;
+    overflow: hidden;
+    float: left;
+}
+
+.desktop-profile-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    margin: 2vw;
+}
+
+
+
+/* **********
+*************
+*************
+    single
+    image
+    page
+*************
+*************
+********** */
+
+.desktop-single-card {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    width: 70vw;
+    margin: auto 15vw;
+    min-height: 50vh;
+    position: relative;
+    box-shadow: 0 0 10px 10px #e6e6e6;
+
+}
+
+.desktop-single-card-img {
+    grid-column: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.desktop-single-card-img img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+.desktop-single-card-interactions {
+    grid-column: 2;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 5vh 1fr 5vh 10vh;
+}
+
+.desktop-single-card-header {
+    height: 5vh;
+    width: 100%;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: 5vh 1fr;
+    border-bottom: solid 1px #000000;
+
+}
+
+.desktop-single-card-header-img {
+    height: 5vh;
+    width: 5vh;
+    object-fit: cover;
+    grid-column: 1;
+} 
+
+.desktop-single-card-header-img img {
+    object-fit: cover;
+    height: 90%;
+    width: 90%;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    margin: 5%;
+}
+
+.desktop-single-card-header-user {
+    grid-column: 2;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    font-size: 2vh;
+    margin: 1.5vh;
+}
+
+.desktop-single-card-comments {
+    height: 100%;
+    grid-row: 2;
+    width: 100%;
+    overflow: scroll;
+}
+
+.desktop-single-card-comment-card {
+    min-height: 5vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 5vh 1fr;
+}
+
+.desktop-single-card-comment-card-img {
+    height: 5vh;
+    width: 5vh;
+    object-fit: cover;
+    grid-column: 1;
+} 
+
+.desktop-single-card-comment-card-img img {
+    object-fit: cover;
+    height: 90%;
+    width: 90%;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    margin: 5%;
+}
+
+.desktop-single-card-comment-card-comment {
+    grid-column: 2;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    font-size: 1.5vh;
+    margin: 1.5vh;
+    overflow: hidden;
+}
+
+
+
+.desktop-single-card-likes {
+    height: 5vh;
+    width: 100%;
+    grid-row: 3;
+    display: grid;
+    grid-template-columns: 5vh 1fr;
+}
+
+.desktop-single-card-likes-img {
+    height: 5vh;
+    width: 5vh;
+    object-fit: cover;
+    grid-column: 1;
+} 
+
+.desktop-single-card-likes-img img {
+    object-fit: cover;
+    height: 90%;
+    width: 90%;
+    margin: 5%;
+}
+
+.desktop-single-card-likes-stat {
+    grid-column: 2;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    font-size: 2vh;
+    margin: 1.5vh;
+}
+
+.desktop-single-card-new-comment{
+    height: 100%;
+    width: 100%;
+    grid-row: 4;
+    display: grid;
+    grid-template-columns: 1fr 10vh;
+    /*background-color: red;*/
+}
+
+
+.desktop-comment-box {
+    height: 8vh;
+    width: 80%;
+    object-fit: cover;
+    grid-column: 1;
+    text-align: center;
+    font-size: 2vh;
+    margin: 0vh 5%;
+    padding: 1vh 5%;
+    border: solid 1px #000000;
+    border-radius: 2vw;
+    text-align: left;
+}
+
+
+
+.desktop-single-card-new-comment-button {
+    height: 10vh;
+    width: 10vh;
+    object-fit: cover;
+    grid-column: 2;
+    text-align: center;
+    font-size: 2vh;
+    margin: 0vh 0vh;
+}
+
+
+
+
+/* **********
+*************
+*************
+    login
+    page
+*************
+*************
+********** */
+
+.login-box {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+.login-image {
+    grid-column: 1;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.login-image-img {
+    grid-column: 1;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.login-image-img img {
+    object-fit: cover;
+    height: 90%;
+    width: 90%;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    margin: 5%;
+}
+
+.form-login {
+    grid-column: 2;
+}
+
+.login-form {
+    margin: 30% auto;
+    width: 25vw;
+}
+.login-input-header {
+    font-family: 'Roboto', sans-serif;
+    color: #000000;
+    text-align: center;
+}
+.login-input {
+    margin: 1vh 2.5vw;
+
+    width: 15vw;
+    height: 5vh;
+    padding: 1vh 2.5vw;
+    font-size: 2vh;
+    border: 1px solid #000000;
+    border-radius: 2vw;
+}
+.login-input3 {
+    width: 25vw;
+    padding: 1vh 0;
+    margin: 1vh 5vw !important;
+}
+.login-signup {
+    text-align: center;
+    margin: 0;
+
+}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <body>
+
+        <!--
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" placeholder="username">
+            <input type="password" placeholder="password">
+            <input type="submit">
+        </form>
+        -->
+        <div  class="login-box">
+            <div class="login-image">
+                <img src="{% static 'img/icon.jpg' %}" alt="login image" class="login-image-img">
+            </div>
+            <div class="form-login">
+                <form class="login-form login-form1" method="POST">
+                    {% csrf_token %}
+                    <h3 class="login-input-header"> Log in</h3>
+                    <input type="text" class="login-input signup-input1" id="username" name="username" placeholder="username">
+                    <input type="password" class="login-input signup-input2" id="password" name="password" placeholder="password">
+                    <input type="submit" class="login-input signup-input3" value="Log in">
+                </form>
+                
+                <p class="login-signup">Don't have an account? Click <a href="/">here</a> to sign up</p>
+            </div>
+
+        </div>
+        
+
+
+        <div class="mobile mobile-footer-pad"></div>
+
+        
+
+    </body> 
+
+    <style type="text/stylesheet">
+        .desktop-header {
+            display: none !important;
+        }
+    </style>
+{% endblock %}

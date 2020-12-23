@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <body>
+
+        
+
+        <!--
+            notifications
+        -->
+        <div class="mobile">
+            <div class="mobile mobile-header-pad"></div>
+            <!--add logic for each notification-->
+            <div class="info-card">
+                <div class="info-card-header-pp">
+                    <img src="{% static 'img/icon.jpg' %}">
+                </div>
+
+                <div class="info-card-text">
+                    <strong>Username</strong>
+                    liked/commented/followed you/your photo
+                </div>
+
+                <!--logic for button or photo-->
+                <div class="info-card-image">
+                    <!--logic for button or photo-->
+                    <img src="{% static 'img/icon.jpg' %}">
+                    <!--<img> for following-->
+                </div>
+
+                <!--
+                <div class="info-card-button">
+                    <button type="button">Follow back</button>
+                </div>
+                -->
+
+            </div>
+            <div class="mobile mobile-footer-pad"></div>
+        </div>
+        
+
+
+
+        
+
+    </body> 
+{% endblock %}

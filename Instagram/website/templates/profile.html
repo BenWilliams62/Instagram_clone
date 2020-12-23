@@ -1,0 +1,217 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<body>
+    <div class="mobile">
+        <div class="mobile mobile-header-pad"></div>
+
+        <!--
+                profile pages
+
+            -->
+        <div class="profile-top-card">
+            <div class="profile-stats">
+                <div class="profile-pp">
+                    <img src="{% static 'img/icon.jpg' %}">
+                </div>
+
+                <div class="profile-post-number">
+                    <strong>23</strong>
+                    <br>
+                    posts
+                </div>
+
+                <div class="profile-followers-number">
+                    <a href="lists">
+                        <strong>760</strong>
+                        <br>
+                        followers
+                    </a>
+                </div>
+
+                <div class="profile-following-number">
+                    <a href="lists">
+                        <strong>98</strong>
+                        <br>
+                        following
+                    </a>
+                </div>
+
+            </div>
+
+            <!--add logic-->
+            <div class="profile-bio">
+                <strong>Name</strong>
+                <p>
+                    hello, this is my page!
+                </p>
+            </div>
+
+            <div class="profile-button">
+                <button>Edit/Follow</button>
+            </div>
+
+        </div>
+
+        <!--
+                images
+            -->
+
+        <div class="profile-images">
+            <!--
+                    add logic for repeated images
+                -->
+            <div class="profile-image">
+                <a href="single-image">
+                    <img src="{% static 'img/icon.jpg' %}">
+                </a>
+            </div>
+
+        </div>
+
+
+        <div class="mobile mobile-footer-pad"></div>
+    </div>
+
+
+    <!--desktop-->
+    <div class="desktop">
+
+        
+        <div class="desktop-pad"></div>
+
+        <!--
+                profile pages
+
+            -->
+        <div class="desktop-profile-top-card">
+            <div class="desktop-profile-pp">
+                <img src="{{ object.pic.url }}">
+            </div>
+
+            <div class="desktop-profile-username">
+                <h3>{{ object.user.username }}</h3>
+            </div>
+
+            <div class="desktop-profile-button">
+                {% if object.user == request.user %}
+                <a href='{{ object.get_edit_url }}'><button>Edit</button></a>
+                {% else %}
+                <button onclick="Follow('{{ object.user }}')">Follow</button>
+                {% endif %}
+            </div>
+
+            <div class="desktop-profile-post-number ta-left">
+                <strong>{{ object.profile_pics|length }}</strong>
+                <br>
+                posts
+            </div>
+
+            <div class="desktop-profile-followers-number ta-left" onclick="openFollowerModal()">
+                <strong>{{ object.followers|length }}</strong>
+                <br>
+                followers
+            </div>
+
+            <div class="desktop-profile-following-number ta-left" onclick="openFollowingModal()">
+                <strong>{{ object.following|length }}</strong>
+                <br>
+                following
+            </div>
+
+
+            <!--add logic-->
+            <div class="desktop-profile-bio">
+                <strong>{{ object.user.first_name }} {{ object.user.last_name }}</strong>
+                <p>
+                    {{ object.biography }}
+                </p>
+            </div>
+
+
+
+        </div>
+
+        <!--
+                images
+            -->
+
+        <div class="desktop-profile-images">
+            {% for post in object.profile_pics %}
+            <div class="desktop-profile-image">
+                <a href="{{ post.get_absolute_url }}">
+                    <img src="{{ post.image.url }}">
+                </a>
+            </div>
+            {% endfor %}
+
+
+        </div>
+
+        <!--follwers and following modal-->
+        <div class="follower-modal" onclick="closeFollowerModal()">
+            <div class="modal-content">
+                <div class="modal-header">
+                    Followers
+                </div>
+
+                <div class="modal-likes">
+                    {% for follower in object.followers %}
+                    <div class="modal-like">
+                        <div class="modal-like-img modal-like-pp">
+                            <a href="{{ follower.follower.profile.get_absolute_url }}">
+                                <img src="{{ follower.follower.profile.pic.url }}">
+                            </a>
+                        </div>
+                        <div class="modal-like-user">
+                            <a
+                                href="{{ follower.follower.profile.get_absolute_url }}">{{ follower.follower.username }}</a>
+                        </div>
+                        <div class="modal-like-img modal-like-follow">
+                            <!-- logic -->
+                            <img>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="following-modal" onclick="closeFollowingModal()">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!--logic for follow/following-->
+                </div>
+
+                <div class="modal-likes">
+                    {% for follower in object.following %}
+                    <div class="modal-like">
+                        <div class="modal-like-img modal-like-pp">
+                            <a href="{{ follower.follower.profile.get_absolute_url }}">
+                                <img src="{{ follower.follower.profile.pic.url }}">
+                            </a>
+                        </div>
+                        <div class="modal-like-user">
+                            <a
+                                href="{{ follower.follower.profile.get_absolute_url }}">{{ follower.follower.username }}</a>
+                        </div>
+                        <div class="modal-like-img modal-like-follow">
+                            <!-- logic -->
+                            <img>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+{% endblock %}

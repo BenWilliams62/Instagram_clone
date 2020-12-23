@@ -1,0 +1,116 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--title-->
+        <title></title>
+
+        <!-- icon-->
+        
+
+        <!--style-->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+        
+
+        <!--fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+        
+
+        <!--js files pt1-->
+        
+        
+    </head>
+
+    <header>
+        <div class="mobile mobile-header">
+            <h3 class="mobile-header-page-title">{{ page_name }}</h3>
+        </div>
+
+        <div class="desktop">
+            <!--desktop header-->
+            <div class="desktop-header">
+                <div class="desktop-header-search">
+                    
+                </div>
+
+                <div class="desktop-header-name">
+                    <a href="/">Instagram</a>
+                </div>
+
+
+                <div class="desktop-header-links">
+                    <div class="desktop-header-profile desktop-header-link-icon">
+                        <a href="{{ request.user.profile.get_absolute_url }}">
+                            <img src="{% static 'img/icon.jpg' %}">
+                        </a>
+                    </div>
+                    <div class="desktop-header-settings desktop-header-link-icon">
+                        <a href="/">
+                            <img src="{% static 'img/icon.jpg' %}">
+                        </a>
+                    </div>
+                    <div class="desktop-header-login-signup">
+                        <!--add logic for signup/signin/logout-->
+                        <a href="/logout/">
+                            Logout
+                        </a>
+                    </div>
+
+                    
+                </div>
+                
+            </div>
+        </div>
+    </header>
+
+    
+{% block content %}
+
+{% endblock %}
+
+    <footer>
+        <div class="mobile">
+            <div class="mobile mobile-footer">
+                <div class="mobile nav-icon nav-icon-1">
+                    <a href="/">
+                        <img src="{% static 'img/icon.jpg' %}" alt="" class="mobile-icon">
+                    </a>
+                </div>
+                <div class="mobile nav-icon nav-icon-2">
+                    <a href="explore">
+                        <img src="{% static 'img/icon.jpg' %}" alt="" class="mobile-icon">
+                    </a>
+                </div>
+                <div class="mobile nav-icon nav-icon-3">
+                    <a href="">
+                        <img src="{% static 'img/icon.jpg' %}" alt="" class="mobile-icon">
+                    </a>
+                </div>
+                <div class="mobile nav-icon nav-icon-4">
+                    <a href="activity">
+                        <img src="{% static 'img/icon.jpg' %}" alt="" class="mobile-icon">
+                    </a>
+                </div>
+                <div class="mobile nav-icon nav-icon-5">
+                    <a href="profile">
+                        <img src="{% static 'img/icon.jpg' %}" alt="" class="mobile-icon">
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="desktop">
+            <!--desktop footer-->
+            
+        </div>
+
+        
+        
+    </footer>
+
+    <script src="{% static 'js/modal.js' %}"></script>
+    <script src="{% static 'js/userFunctions.js' %}"></script>
+</html>

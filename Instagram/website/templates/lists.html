@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <body>
+
+        <div class="mobile mobile-header-pad"></div>
+
+        <!--
+            notifications
+        -->
+        <div class="mobile">
+        <!--add logic for each notification-->
+            <div class="info-card">
+                <div class="info-card-header-pp">
+                    <img src="{% static 'img/icon.jpg' %}">
+                </div>
+
+                <div class="info-card-text">
+                    <strong>Username</strong>
+                </div>
+
+                <!--logic for button or photo-->
+                <div class="info-card-image">
+                    <!--logic for button follow/unfollow-->
+                    <img src="{% static 'img/icon.jpg' %}">
+                    <!--<img> for following-->
+                </div>
+
+                <!--
+                <div class="info-card-button">
+                    <button type="button">Follow back</button>
+                </div>
+                -->
+
+            </div>
+        </div>
+        
+
+
+        <div class="mobile mobile-footer-pad"></div>
+
+
+        <!--desktop-->
+
+        <div class="dekstop">
+            <div class="desktop desktop-pad"></div>
+
+            {% for item in list %}
+            <img src="{{ item.profile.pic.url }}">
+            <a href="{{ item.profile.get_absolute_url }}">{{ item.username }}</a>
+            {% endfor %}
+        </div>
+
+        
+
+    </body> 
+{% endblock %}

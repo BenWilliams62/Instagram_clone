@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <body>
+
+        <div class="mobile mobile-header-pad"></div>
+
+        <!--
+            notifications
+        -->
+        <div class="mobile">
+            <div class="comments-card">
+                <!--add logic for each notification-->
+                <div class="info-card">
+                    <div class="info-card-header-pp">
+                        <img src="{% static 'img/icon.jpg' %}">
+                    </div>
+
+                    <div class="info-card-text info-card-comments">
+                        <strong>Username</strong>
+                        nice photo, mate!
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <div class="new-comment">
+                <!--<input type="text" class="comment-input">-->
+                <textarea class="comment-input"></textarea>
+            </div>
+        </div>
+            
+
+
+        <div class="mobile mobile-footer-pad"></div>
+
+        
+
+    </body> 
+{% endblock %}
