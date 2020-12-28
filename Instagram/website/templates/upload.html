@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<body>
+
+    
+    <div class="desktop">
+
+        <div class="desktop desktop-pad"></div>
+        <div class="desktop desktop-pad"></div>
+        <form class="desktop-single-card"  method="POST" enctype="multipart/form-data">
+            <div class="desktop-single-card-img">
+                <!--<input type="file" name="image-upload" id="image-upload">-->
+                {{ form.image }}
+            </div>
+            <div class="desktop-single-card-interactions">
+                <div class="desktop-single-card-header">
+                    <div class="desktop-single-card-header-img">
+                        <img src="{{ user.profile.pic.url }}">
+                    </div>
+                    <div class="desktop-single-card-header-user">
+                        <a href="{{ user.profile.get_absolute_url }}">
+                            {{ user.username }}
+                        </a>
+                    </div>
+
+                </div>
+                <div class="desktop-single-card-new-comment">
+                    <!-- input -->
+                    {% csrf_token %}
+                    <!--{{ form.message }}-->
+                    {{ form.caption }}
+                    <!--submit-->
+
+                    <button type="submit" class="desktop-single-card-new-comment-button">
+                        Upload
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+{% endblock %}

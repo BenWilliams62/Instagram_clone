@@ -6,7 +6,7 @@ from .views import (
     activity,
     comments,
     lists,
-    single,
+    # single,
     login,
     ProfileView,
     ProfileEditView,
@@ -15,6 +15,9 @@ from .views import (
     updateLike,
     updateFollow,
     logout_view,
+    upload,
+    # UploadView,
+
 )
 from django.conf.urls.static import static
 
@@ -28,7 +31,8 @@ urlpatterns = [
     path('comments', comments, name='comments'),
     path('image/<slug>', ImageView.as_view(), name='image'),
     path('lists', lists, name="lists"),
-    path('single-image', single, name="single"),
+    # path('single-image', single, name="single"),
+    path('upload', upload, name="upload"),
 
 
     path('login', login_logic, name="login"),

@@ -8,9 +8,7 @@ import json
 from django.contrib.auth import authenticate, logout, login
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-from .forms import (
-    CommentForm
-)
+from .forms import CommentForm, PostForm
 
 # Create your views here.
 
@@ -100,14 +98,14 @@ class ImageView(FormMixin, DetailView):
         message = request.POST['message']
         postID = request.POST['postID']
         post = Post.objects.get(postID=postID)
-        print('\n\nhello ',post,'\n\n')
+        url = post.get_absolute_url()
         commented = Comments.objects.create(
             commentedOn=post,
             comment=message,
             commentBy=user
         )
         print('\nsuccess\n')
-        return redirect('/')
+        return redirect(url)
 
     '''
     def post(self, request, *args, **kwargs):
@@ -142,12 +140,17 @@ def lists(request):
         context = {}
     return render(request, 'lists.html', context)
 
-@login_required(login_url='login')
+'''@login_required(login_url='login')
 def single(request):
-    context = {
-        'page_name': 'username',
-    }
-    return render(request, 'single-image-page.html', context)
+    if request.method == "GET":
+        context = {
+            'page_name': 'username',
+        }
+        return render(request, 'single-image-page.html', context)
+
+    if request.method == "POST":
+        return render(request, 'single-image-page.html', context={})'''
+
 
 
 def login_logic(request):
@@ -231,6 +234,26 @@ def updateFollow(request):
     
     else:
         return JsonResponse('error', safe=False)
+
+
+def upload(request):
+    user = request.user
+    form = PostForm(request.POST, request.FILES)
+    if request.method == "POST":
+        if form.is_valid():
+
+            photo = form.cleaned_data.get("image")
+            caption = form.cleaned_data.get('caption')
+            new_post = Post.objects.create(userPosted=user, image=photo, caption=caption)
+
+            return redirect('/')
+    else:
+        pass
+    context = {
+        'form': form,
+    }
+    return render(request, 'upload.html', context)
+
 
 '''
 # comment and delete comment

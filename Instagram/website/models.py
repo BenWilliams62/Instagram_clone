@@ -5,7 +5,7 @@ from django.contrib.auth.models import AbstractUser
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.utils.text import slugify
-from datetime import datetime
+import datetime
 
 # choice lists
 
@@ -14,7 +14,7 @@ from datetime import datetime
 class Profile(models.Model):
     user = models.OneToOneField(User, null=False, on_delete = models.CASCADE, primary_key=True)
     biography = models.CharField(max_length=200, null=True, blank=True)
-    pic = models.ImageField(upload_to='media/pp',null=True, blank=True)
+    pic = models.ImageField(upload_to='pp/',null=True, blank=True)
     slug = models.SlugField(unique=True, editable=True, null=True, default='')
     
 
@@ -45,6 +45,7 @@ class Profile(models.Model):
         followers = Follows.objects.filter(following=self.user)
         return followers
 
+
     @receiver(post_save, sender=User)
     def create_user_profile(sender, instance, created, **kwargs):
         if created:
@@ -58,19 +59,24 @@ class Profile(models.Model):
 
 class Post(models.Model):
     postID = models.AutoField(primary_key = True)
-    image = models.ImageField(upload_to='media/images/', null=False, blank=False)
+    image = models.ImageField(upload_to='images/', null=False, blank=False)
     userPosted = models.ForeignKey(User, on_delete=models.CASCADE, null=False, blank=False)
     caption = models.CharField(max_length=200, null=False, blank=True)
     timePosted = models.DateTimeField(auto_now_add=True)
-    slug = models.SlugField(unique=True, editable=False, null=True, default='')
+    slug = models.SlugField(editable=False, null=True, default='')
 
     class Meta:
         ordering = ['-timePosted']
 
     def save(self, **kwargs):
         slug_user_str = str(self.userPosted)
-        slug_post_str = str(self.postID)
-        slug_str = slug_user_str + '-' + slug_post_str
+        slug_year_str = str(datetime.datetime.now().strftime("%Y"))
+        slug_month_str = str(datetime.datetime.now().strftime("%m"))
+        slug_day_str = str(datetime.datetime.now().strftime("%d"))
+        slug_hour_str = str(datetime.datetime.now().strftime("%H"))
+        slug_minute_str = str(datetime.datetime.now().strftime("%M"))
+        slug_second_str = str(datetime.datetime.now().strftime("%S"))
+        slug_str = slug_user_str + '-' + slug_year_str+slug_month_str+slug_day_str+slug_hour_str+slug_minute_str+slug_second_str
         self.slug = slugify(slug_str)
         super(Post, self).save(**kwargs)
 
