@@ -14,6 +14,7 @@ This project is being actively developed
 - following
 
 ## to be added
+### additions to be made when using React. I am doing backend first, before adding this functionality
 - uploading
 - commenting
 - updating number of likes when liked
