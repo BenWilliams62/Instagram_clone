@@ -1,22 +1,31 @@
 # Instagram clone
 a small remake of the basic instagram website
 
-# Motivations
+## Motivations
 To develop and showcase my ability as a backend developer
 
-# Build Status
+## Tools
+- Python (django)
+- html/css
+- js
+
+## Build Status
 This project is being actively developed
 
-# Features
-## current features
+## Features
+### current features
 - personal profile
 - likes
 - following
 - commenting
 - uploading
 
-## to be added
-### additions to be made when using React. I am doing backend first, before adding this functionality
+### to be added
 - make responsive
-- live data updates (React)
+- user searching
+- selecting posts only from followed accounts
+
+## upon completion
+when completed, it will serve as a reference when building with react
+
 
