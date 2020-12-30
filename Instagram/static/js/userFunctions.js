@@ -40,7 +40,24 @@ function addLike(postID) {
     })
 
     .then((data) =>{
-        console.log('data:', data)
+        if (('reply' in data) == true){
+            var likes = document.getElementById(postID).innerHTML;
+            console.log(likes)
+            number = Number(likes.split(" ")[0]);
+            number = number + 1;
+            number.toString();
+            number = number + ' likes';
+            document.getElementById(postID).innerHTML = number;
+        } else {
+            var likes = document.getElementById(postID).innerHTML;
+            console.log(likes)
+            number = Number(likes.split(" ")[0]);
+            number = number - 1;
+            number.toString();
+            number = number + ' likes';
+            document.getElementById(postID).innerHTML = number;
+        };
+        
     })
 
 }
@@ -68,7 +85,21 @@ function Follow(user) {
     })
 
     .then((data) =>{
-        console.log('data:', data)
+        console.log(data);
+        if (('reply' in data) == true){
+            var likes = document.getElementById('followers-number').innerHTML;
+            number = Number(likes);
+            number = number + 1;
+            number.toString();
+            document.getElementById('followers-number').innerHTML = number;
+        } else {
+            var likes = document.getElementById('followers-number').innerHTML;
+            number = Number(likes);
+            number = number - 1;
+            number.toString();
+            document.getElementById('followers-number').innerHTML = number;
+        };
+        
     })
 
     

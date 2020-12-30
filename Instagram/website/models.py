@@ -97,7 +97,7 @@ class Post(models.Model):
         return comments
 
     def upload_time(self):
-        now = datetime.now()
+        now = datetime.datetime.now()
         year_now = now.strftime('%Y')
         month_now = now.strftime('%m')
         day_now = now.strftime('%d')

@@ -106,8 +106,8 @@
                             <img src="{% static 'img/like_icon.png' %}">
                         </div>
 
-                        <div class="desktop-single-card-likes-stat">
-                            {{ object.get_likes|length }} likes <!--logic-->
+                        <div class="desktop-single-card-likes-stat" id="{{object.postID}}">
+                            {{ object.get_likes|length }} likes
                         </div>
                     </div>
 

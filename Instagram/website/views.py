@@ -15,8 +15,11 @@ from .forms import CommentForm, PostForm
 @login_required(login_url='login')
 def home(request):
     
-    following = Follows.objects.get(follower=request.user)
-    following = following.following
+    following = Follows.objects.filter(follower=request.user)
+    #following = following.following
+    print(following)
+    # users = request.user + following
+    #following += request.user
     post = Post.objects.filter(userPosted=following)
     like = Likes.objects
     context = {
@@ -193,6 +196,7 @@ def updateLike(request):
 
     if request.method == "POST":
         data = json.loads(request.body)
+        
         postId = data['postID']
 
         user = request.user  #change to get user
@@ -202,9 +206,10 @@ def updateLike(request):
 
         if create:
             like.save()
-
+            data["reply"] = "new"
         else:
             like.delete()
+            # data["reply"] = "old"
 
         
 
@@ -228,6 +233,7 @@ def updateFollow(request):
 
         if create:
             follow.save()
+            data['reply'] = 'new'
         else:
             follow.delete()
         return JsonResponse(data, safe=False)

@@ -184,7 +184,7 @@
         
                         <div class="desktop card-likes-desktop">
                             <button id="modal-button" onclick="openModal()">
-                                <strong>{{ post.get_likes|length }} likes</strong>
+                                <strong id="{{ post.postID }}">{{ post.get_likes|length }} likes</strong>
                             </button>
                             <!--add logic for picture like number-->
                         </div>

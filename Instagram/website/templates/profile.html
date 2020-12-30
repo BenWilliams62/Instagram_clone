@@ -110,7 +110,7 @@
             </div>
 
             <div class="desktop-profile-followers-number ta-left" onclick="openFollowerModal()">
-                <strong>{{ object.followers|length }}</strong>
+                <strong id="followers-number">{{ object.followers|length }}</strong>
                 <br>
                 followers
             </div>
@@ -185,7 +185,7 @@
         <div class="following-modal" onclick="closeFollowingModal()">
             <div class="modal-content">
                 <div class="modal-header">
-                    <!--logic for follow/following-->
+                    Following
                 </div>
 
                 <div class="modal-likes">
